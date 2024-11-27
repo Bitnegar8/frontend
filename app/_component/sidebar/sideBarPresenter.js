@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 export const SideBarPresenter = () => {
   const [selectTab, setSelectTab] = useState(false);
   const [companyTab, setCompanyTab] = useState(false);
+  const [setting, setSettingTab] = useState(false);
   const [data, setData] = useState(null);
   const [tierData, setTierData] = useState(null);
 
@@ -19,6 +20,9 @@ export const SideBarPresenter = () => {
   const handleCompanyTab = (e) => {
     setCompanyTab(e)
   }
+  const handleSettingTab = (e) => {
+    setSettingTab(e)
+  }
 
   return {
     handleSelectedTab,
@@ -27,5 +31,7 @@ export const SideBarPresenter = () => {
     handleCompanyTab,
     data,
     tierData,
+    setting,
+    handleSettingTab,
   };
 };
