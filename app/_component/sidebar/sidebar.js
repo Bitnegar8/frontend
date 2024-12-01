@@ -36,7 +36,7 @@ export const Sidebar = () => {
                   />
               </div>
               <div className={"text-white flex items-center px-5"}>
-                  full names
+                  full name
               </div>
           </div>
         <span className={"text-white text-xs"}>Main Menu</span>

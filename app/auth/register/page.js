@@ -69,7 +69,7 @@ const Page = () => {
           <div className={`flex-col gap-5 ${step === 1 ? "flex" : "hidden"} w-1/4`}>
             <div className={"flex gap-5 mb-5"}>
               <SelectButton selected={type === 1} label={"Individual"} id={1} onChangeSelected={() => setType(1)} />
-              <SelectButton selected={type === 2} label={"Company"} id={2} onChangeSelected={() => setType(2)} />
+              <SelectButton disable={true} selected={type === 2} label={"Company"} id={2} onChangeSelected={() => setType(2)} />
             </div>
             <CustomButton loading={loading} onClick={() => setStep(2)} title={"Next Step"} />
           </div>
@@ -95,7 +95,7 @@ const Page = () => {
               onSubmit={handleSubmit}
           >
             {({ isSubmitting }) => (
-                <Form>
+                <Form className={"w-full"}>
                   <div className={`w-full flex-wrap justify-center gap-5 ${step === 2 && type === 1 ? "grid" : "hidden"} grid-cols-1 md:grid-cols-4`}>
                     <Field name="FirstName">
                       {({ field }) => <CustomInput {...field} placeHolder={"First Name"} label={"First Name"} />}
@@ -172,7 +172,7 @@ const Page = () => {
                     {/* Add more fields for Company type as needed */}
                   </div>
 
-                  <div className={` ${step !== 1 ? "flex" : "hidden"} gap-5 justify-start md:w-1/3`}>
+                  <div className={` ${step !== 1 ? "flex" : "hidden"} gap-5 justify-start md:w-1/4 my-20`}>
                     <CustomButton loading={loading} onClick={() => setStep(1)} title={"Prev Step"} />
                     <CustomButton styles={"!bg-customPrimary-500"} loading={loading} type="submit" title={"Submit"} disabled={isSubmitting} />
                   </div>
